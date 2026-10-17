@@ -13,6 +13,7 @@ import jakarta.persistence.CascadeType;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @Entity
@@ -74,6 +75,7 @@ public class Customer {
         return email;
     }
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     public String getPassword() {
         return password;
     }
